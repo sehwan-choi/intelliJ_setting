@@ -63,3 +63,47 @@ html 수정후 Build -> recompile 하면 된다 <br>
 ![그림1](./jpa5.jpg)
 
 위 순서로 하지 않으면 database 파일이 생성되지 않아서 접속이 되지 않는다.
+
+<br><br>
+
+# 단축키 등록
+
+Mac : Preferences -> Keymap 검색 -> Editor Actions 에서 원하는 단축키로 설정할수 있다. <br>
+Windows : File -> Settings -> Keymap 검색 -> Editor Actions 에서 원하는 단축키로 설정할수 있다. <br>
+
+
+![그림1](./jpa6.jpg)
+
+<br>
+
+필자는 한줄 삭제가 단축키로 등록되어있지 않아 아래와 같이 Ctrl + D 단축키로 수동으로 등록했다.
+
+
+![그림1](./jpa7.jpg)
+
+<br><br>
+
+# JPA 사용시 쿼리 파라미터 남기기
+
+- 외부 라이브러리 사용
+- https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
+- 스프링 부트를 사용하면 이 라이브러리만 추가하면 된다.
+
+- build.gradle -> dependencies에 implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.7' 를 추가한다.
+
+```
+...
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.7' <-- 추가
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+...
+```
+> 참고: 쿼리 파라미터를 로그로 남기는 외부 라이브러리는 시스템 자원을 사용하므로, 개발 단계에서는 편하게 사용해도 된다. 하지만 운영시스템에 적용하려면 꼭 성능테스트를 하고 사용하는 것이 좋다
