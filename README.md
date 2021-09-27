@@ -96,7 +96,7 @@ Windows : File -> Settings -> Keymap 검색 -> Editor Actions 에서 원하는 �
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.7' <-- 추가
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8' <-- 추가
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
