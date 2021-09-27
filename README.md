@@ -53,7 +53,7 @@ html 수정후 Build -> recompile 하면 된다 <br>
 - 데이터베이스 파일 생성 방법
    - jdbc:h2:~/DB이름 (최소 한번)
    - MAC : ~/DB이름.mv.db 파일 생성 확인
-     Windows : C:/사용자/user 하위에 DB이름.mv.db 파일 생성 확인
+	- Windows : C:/사용자/user 하위에 DB이름.mv.db 파일 생성 확인
    - 이후 부터는 jdbc:h2:tcp://localhost/~/DB이름 이렇게 접속 (위의 DB이름.mv.db 파일이 생성되어야 tcp로 접속할수 있다)
 
 - 최초 아래와 같이 접속 ( jdbc:h2:~/datajpa)
